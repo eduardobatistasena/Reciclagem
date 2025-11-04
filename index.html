@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Reciclagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo de Reciclagem</h1>
+        <p>Arraste os itens para a lixeira correta!</p>
+       
+        <div class="score">Pontuação: <span id="score">0</span></div>
+
+        <div class="game-area">
+            <div id="item1" class="item" draggable="true" ondragstart="drag(event)">
+                <img src="papel.jpg" alt="Papel">
+            </div>
+            <div id="item2" class="item" draggable="true" ondragstart="drag(event)">
+                <img src="plastico.jpg" alt="Plástico">
+            </div>
+            <div id="item3" class="item" draggable="true" ondragstart="drag(event)">
+                <img src="vidro.jpg" alt="Vidro">
+            </div>
+        </div>
+
+        <div class="bins">
+            <div class="bin" id="papel" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img src="papel-lixeira.jpg" alt="Lixeira Papel">
+            </div>
+            <div class="bin" id="plastico" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img src="plastico-lixeira.jpg" alt="Lixeira Plástico">
+            </div>
+            <div class="bin" id="vidro" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <img src="vidro-lixeira.jpg" alt="Lixeira Vidro">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
