@@ -1,43 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo de Reciclagem</title>
+    <title>♻️ Recicla Game PRO 🌳</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Jogo de Reciclagem</h1>
-        <p>Arraste os itens para a lixeira correta!</p>
-       
-        <div class="score">Pontuação: <span id="score">0</span></div>
 
-        <div class="game-area">
-            <div id="item1" class="item" draggable="true" ondragstart="drag(event)">
-                <img src="papel.jpg" alt="Papel">
-            </div>
-            <div id="item2" class="item" draggable="true" ondragstart="drag(event)">
-                <img src="plastico.jpg" alt="Plástico">
-            </div>
-            <div id="item3" class="item" draggable="true" ondragstart="drag(event)">
-                <img src="vidro.jpg" alt="Vidro">
-            </div>
+    <header>
+        <h1>♻️ Recicla Game PRO 🌳</h1>
+        <p>Classifique os resíduos o mais rápido que puder!</p>
+    </header>
+
+    <div id="placar-container">
+        <div class="info-box">
+            <span>Pontos:</span>
+            <span id="pontuacao" class="valor-placar">0</span>
+        </div>
+        <div class="info-box erro-box">
+            <span>Erros:</span>
+            <span id="erros" class="valor-placar">0</span>
+        </div>
+    </div>
+    
+    <div id="mensagem-feedback" class="escondido"></div>
+
+    <div id="container-lixeiras">
+        <div class="lixeira azul" data-tipo="papel">
+            <span class="lixeira-titulo">PAPEL</span>
+            <div class="icone-lixeira">📄</div>
         </div>
 
-        <div class="bins">
-            <div class="bin" id="papel" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img src="papel-lixeira.jpg" alt="Lixeira Papel">
-            </div>
-            <div class="bin" id="plastico" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img src="plastico-lixeira.jpg" alt="Lixeira Plástico">
-            </div>
-            <div class="bin" id="vidro" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <img src="vidro-lixeira.jpg" alt="Lixeira Vidro">
-            </div>
+        <div class="lixeira vermelha" data-tipo="plastico">
+            <span class="lixeira-titulo">PLÁSTICO</span>
+            <div class="icone-lixeira">♻️</div>
+        </div>
+
+        <div class="lixeira amarela" data-tipo="metal">
+            <span class="lixeira-titulo">METAL</span>
+            <div class="icone-lixeira">🥫</div>
+        </div>
+
+        <div class="lixeira verde" data-tipo="vidro">
+            <span class="lixeira-titulo">VIDRO</span>
+            <div class="icone-lixeira">🍸</div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="container-itens">
+        <div class="item" data-tipo="papel" draggable="true">📰 Jornal</div>
+        <div class="item" data-tipo="plastico" draggable="true">🥤 Copo Plástico</div>
+        <div class="item" data-tipo="metal" draggable="true">🔑 Chave Velha</div>
+        <div class="item" data-tipo="vidro" draggable="true">🍷 Pedaço de Vidro</div>
+        <div class="item" data-tipo="plastico" draggable="true">🧴 Frasco Shampoo</div>
+        <div class="item" data-tipo="papel" draggable="true">📦 Caixa Papelão</div>
+        </div>
+
+    <div id="game-controls">
+        <button id="btn-novo-jogo" onclick="iniciarNovoJogo()">Novo Jogo</button>
+    </div>
+
+    <script src="script.js"></script> 
 </body>
 </html>
